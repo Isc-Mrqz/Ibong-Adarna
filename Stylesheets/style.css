@@ -446,4 +446,371 @@ nav input {
     left: 4px;
     bottom: 20px;
   }
+}
+.main-chapter-1-container {
+  position: relative;
+  color: white;
+  background-color: black;
+  font-size: 1.5rem;
+  padding: 3rem;
+  line-height: 1.5;
+}
+
+.main-ibong-adarna-section {
+  display: grid;
+  position: relative;
+  --container-block-size: $container-block-size;
+  min-block-size: max(400px, 100dvb);
+  background-color: white;
+}
+
+.main-container-for-characters {
+  display: grid;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .main-container-for-characters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.character-content {
+  display: grid;
+  inline-size: 100%;
+  padding-block: 50px;
+  padding-inline: 60px;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  .character-content {
+    min-block-size: 100vh;
+  }
+}
+
+.character-image-in-mobile-view {
+  aspect-ratio: 1/1;
+}
+@media (min-width: 768px) {
+  .character-image-in-mobile-view {
+    display: none;
+  }
+}
+
+.character-name {
+  font-size: 2rem;
+}
+
+.character-description {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.right-side-character-images {
+  display: grid;
+  position: sticky;
+  inset-block-start: 0;
+  block-size: max(400px, 100dvb);
+}
+@media (width < 768px) {
+  .right-side-character-images {
+    display: none;
+  }
+}
+
+.main-character-circle-card-container {
+  display: grid;
+  place-items: center;
+}
+.main-character-circle-card-container > * {
+  grid-area: 1/1;
+}
+
+.character-circle-card {
+  aspect-ratio: 1/1;
+  scale: 0.3;
+}
+
+.characters-image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.character-image-1 {
+  scale: 1;
+}
+
+.character-image-2 {
+  translate: -15vw 35vh;
+}
+
+.character-image-3 {
+  translate: 15vw 35vh;
+}
+
+/* This is for the scroll animations using scroll-based timelines. */
+@supports (animation-timeline: scroll()) {
+  body {
+    timeline-scope: --left-side-character-1-information, --left-side-character-2-information, --left-side-character-3-information;
+  }
+  .main-ibong-adarna-section {
+    view-timeline-name: --section;
+  }
+  .left-side-character-1-information {
+    view-timeline-name: --left-side-character-1-information;
+  }
+  .left-side-character-2-information {
+    view-timeline-name: --left-side-character-2-information;
+  }
+  .left-side-character-3-information {
+    view-timeline-name: --left-side-character-3-information;
+  }
+  .character-circle-card {
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  .character-image-1 {
+    animation-timeline: --left-side-character-1-information;
+    animation-name: slide-up-first-card;
+  }
+  .character-image-2 {
+    animation-timeline: --left-side-character-2-information;
+    animation-name: sliding-up-character-circle-card;
+  }
+  .character-image-3 {
+    animation-timeline: --left-side-character-3-information;
+    animation-name: sliding-up-character-circle-card;
+  }
+  @keyframes slide-up-first-card {
+    50% {
+      translate: 0;
+      opacity: 1;
+    }
+    90% {
+      scale: 0.6;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes sliding-up-character-circle-card {
+    50% {
+      translate: 0;
+      opacity: 1;
+      scale: 1;
+    }
+    90% {
+      scale: 0.6;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+.king-dreaming {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 30px;
+  text-align: center;
+}
+
+.king-dreaming-contents {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  box-shadow: 2px 3px 10px #444444;
+  overflow: hidden;
+}
+
+.king-dreaming-contents img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.king-dreaming-contents .king-dreaming-text {
+  display: flex;
+  position: absolute;
+  color: black;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transition: 0.6s;
+}
+
+.king-dreaming-contents .king-dreaming-text p {
+  font-size: 2.5rem;
+  margin: 20px;
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
+.king-dreaming-contents:hover .king-dreaming-text {
+  opacity: 1;
+}
+
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .king-dreaming-contents {
+    height: 300px;
+  }
+  .king-dreaming-contents .king-dreaming-text p {
+    font-size: 1rem;
+  }
+}
+/* Ibong Adarna Blur Image Section */
+.ibong-adarna-blur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 30px;
+  padding: 0;
+  text-align: center;
+}
+
+.ibong-adarna-blur img {
+  border-radius: 20%;
+  max-width: 100%;
+  height: auto;
+  margin: 20px;
+  filter: blur(3px);
+  transition: filter 0.7s, transform 0.7s;
+}
+
+.ibong-adarna-blur img:hover {
+  filter: blur(0px);
+  transform: scale(1.2);
+}
+
+.ibong-adarna-blur p {
+  color: white;
+  background-color: black;
+  font-size: 1.5rem;
+  padding: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Media Query to style viewports that are 768px and Below */
+@media (max-width: 768px) {
+  .ibong-adarna-blur {
+    height: auto;
+    padding: 20px;
+  }
+  .ibong-adarna-blur img {
+    margin: 10px;
+  }
+  .ibong-adarna-blur p {
+    font-size: 1.5rem;
+  }
+}
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .ibong-adarna-blur img {
+    max-width: 100%;
+    margin: 5px;
+    transform: none;
+  }
+  .ibong-adarna-blur p {
+    font-size: 1rem;
+  }
+}
+.turn-to-stone p {
+  color: white;
+  background-color: black;
+  font-size: 1.5rem;
+  padding: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.diego-and-pedro-flipping-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .diego-and-pedro-flipping-card {
+    flex-direction: row;
+  }
+}
+/* This sets the dimensions and positioning of the container. */
+.main-flipping-card-container {
+  position: relative;
+  width: 300px;
+  margin: 20px;
+  max-width: 100%;
+}
+
+.main-flipping-card {
+  transform-style: preserve-3d;
+}
+
+.diego-and-pedro-flipping-card-front-side,
+.diego-and-pedro-flipping-card-back-side {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 500px;
+  transition: transform 1.2s;
+  backface-visibility: hidden;
+}
+
+/* This keeps the front side of the card in its default state. */
+.diego-and-pedro-flipping-card-front-side {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+/* This flips the front card upon hover. */
+.main-flipping-card:hover .diego-and-pedro-flipping-card-front-side {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+}
+
+.diego-and-pedro-flipping-card-back-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.main-flipping-card:hover .diego-and-pedro-flipping-card-back-side {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.main-flipping-card .flipping-card-heading {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 15%;
+  transform: translateY(-50%) translateZ(80px);
+  z-index: 2;
+}
+
+.diego-and-pedro-flipping-card h2 {
+  font-size: 3em;
 }/*# sourceMappingURL=style.css.map */
