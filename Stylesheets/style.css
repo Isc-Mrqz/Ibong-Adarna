@@ -1,0 +1,449 @@
+/* I imported the "Medieval Sharp" font from Google Fonts. */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "medievalsharp";
+  overflow-x: hidden;
+}
+
+.main-preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+.main-preloader-container .preloader-curtain:before, .main-preloader-container .preloader-curtain:after {
+  content: "";
+  position: absolute;
+  background: url("/Images/star.gif");
+  width: 50%;
+  height: 100%;
+  transition: 1.2s;
+}
+.main-preloader-container .preloader-curtain:before {
+  left: 0;
+}
+.main-preloader-container .preloader-curtain:after {
+  right: 0;
+}
+.main-preloader-container.unveilCurtain .preloader-curtain:before {
+  left: -50%;
+}
+.main-preloader-container.unveilCurtain .preloader-curtain:after {
+  right: -50%;
+}
+.main-preloader-container.unveilCurtain .preloader-contents {
+  opacity: 0;
+  margin-top: -100px;
+}
+.main-preloader-container .preloader-contents {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.6s;
+}
+.main-preloader-container .preloader-contents .start-website-button {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  border: 3px solid white;
+  padding: 25px 0;
+  text-align: center;
+  width: 200px;
+  border-radius: 3px;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+.main-preloader-container .preloader-contents .start-website-button:hover {
+  color: black;
+  background-color: white;
+}
+.main-preloader-container .preloader-contents .use-headphone-message {
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  line-height: 1.4;
+}
+.main-preloader-container .preloader-contents .use-headphone-message .headphone-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.website-backgroundmusic-autoscroll-and-fullscreen-toggles {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  bottom: 30px;
+  right: 10px;
+  border-radius: 8px;
+  z-index: 1500;
+}
+
+.website-backgroundmusic-autoscroll-and-fullscreen-toggles label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.website-backgroundmusic-autoscroll-and-fullscreen-toggles input {
+  margin-right: 5px;
+}
+
+/* Styling for the Navigation Menu */
+nav {
+  position: fixed;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  width: 100%;
+  z-index: 50;
+}
+
+/* Styling for both the  nav and Navigation-Menu-Container container */
+nav .Navigation-Menu-Container {
+  position: relative;
+  max-width: 1290px;
+  padding: 0px 16px;
+  height: 80px;
+  line-height: 80px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* This is to hide the input elements in the Navigation Menu */
+nav input {
+  display: none;
+}
+
+/* Styling for the Logo Image including size and top margin*/
+.ibong-adarna-logo img {
+  height: 70px;
+  width: auto;
+  margin-top: 20px;
+}
+
+/* Styling for the Navigational Links */
+.Navigation-Menu-Container .Navigation-Menu-Links {
+  display: inline-flex;
+}
+
+/* Styling to remove the bulletpoint */
+.Navigation-Menu-Links li {
+  list-style: none;
+}
+
+/* Styling for the Navigational Links or Anchor tags */
+.Navigation-Menu-Links li a {
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding: 5px 12px;
+  text-decoration: none;
+}
+
+/* To add the underline on hover effect */
+.Navigation-Menu-Links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: 0.7s ease;
+}
+
+/* To unveil or expand the underline */
+.Navigation-Menu-Links li a:hover::after {
+  width: 100%;
+}
+
+/* Styling to hide the responsive view links by default */
+.Navigation-Menu-Links .Responsive-View {
+  display: none;
+}
+
+/* Styling for the Close Button */
+.Navigation-Menu-Links i {
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+/* Styling for the Menu Button */
+.Responsive-Menu-Button i {
+  font-size: 35px;
+}
+
+/* Styling for the buttons */
+.Navigation-Menu-Container .btn {
+  display: none;
+  font-size: 50px;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.Navigation-Menu-Container .btn.Responsive-Close-Button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+/* Media Queries */
+/* Media Query to style viewports that are 1024px and Below */
+@media screen and (max-width: 1024px) {
+  /* This is to unveil the responsive menu button to open the navigation menu */
+  .Navigation-Menu-Container .btn {
+    display: block;
+  }
+  nav .Navigation-Menu-Container {
+    height: 50px;
+  }
+  .ibong-adarna-logo img {
+    height: 40px;
+    width: auto;
+  }
+  /* Styling for the Navigational links */
+  .Navigation-Menu-Container .Navigation-Menu-Links {
+    position: fixed;
+    display: block;
+    background-color: black;
+    padding: 50px 10px;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    top: 0;
+    left: -100%;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(5, 2, 2, 0.71);
+    transition: all 0.7s ease;
+  }
+  /* To unveil the navigation menu when the responsive menu button is clicked or checked */
+  #Responsive-Menu-Button:checked ~ .Navigation-Menu-Links {
+    left: 0%;
+  }
+  /* To hide the menu button when the menu is unveiled or open */
+  #Responsive-Menu-Button:checked ~ .btn.Responsive-Menu-Button {
+    display: none;
+  }
+  /* To unveil the close button when the menu is open */
+  #Responsive-Close-Button:checked ~ .btn.Responsive-Menu-Button {
+    display: block;
+  }
+  /* Styling for the navigation menu list items */
+  .Navigation-Menu-Links li {
+    margin: 50px 5px;
+  }
+  /* Styling for the navigational menu links */
+  .Navigation-Menu-Links li a {
+    display: block;
+    padding: 0 20px;
+    font-size: 30px;
+  }
+  /* This hides the website section title */
+  .Navigation-Menu-Links .Website-Section-Title {
+    display: none;
+  }
+  /* Styling for the responsive view button */
+  .Navigation-Menu-Links .Responsive-View {
+    display: block;
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  /* On hover effect that changes background color */
+  .Navigation-Menu-Links .Responsive-View:hover {
+    background-color: #333;
+  }
+}
+.anchor-offset {
+  position: relative;
+  top: -80px;
+}
+
+.ibong-adarna-title {
+  background: url(/Images/Opening.gif);
+  padding-top: 63%;
+  background-size: cover;
+  position: relative;
+}
+
+.ibong-adarna-title h1 {
+  position: fixed;
+  margin-top: 0;
+  top: 9rem;
+  right: 3rem;
+  font-size: 20vw;
+  line-height: 0.8;
+  text-align: center;
+}
+
+.ibong-adarna-title h1 span {
+  display: block;
+  font-size: 10vw;
+}
+
+/* This styles the anchor tag (which is the start button) within the "ibong-adarna-title" including its positioning, color, size, and  text alignment.*/
+.ibong-adarna-title a {
+  position: absolute;
+  top: 60%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 2rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ibong-adarna-title a:hover {
+  color: black;
+  background-color: white;
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: rgba(0, 0, 0, 0.431);
+}
+
+.scroll-wheel-main-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-wheel-container {
+  position: relative;
+  width: 30px;
+  height: 60px;
+  border: 3px solid white;
+  border-radius: 15px;
+}
+
+.scroll-wheel-ball {
+  position: absolute;
+  width: 18px;
+  border-radius: 8px;
+  background-color: white;
+  top: 5px;
+  left: 4px;
+  bottom: 30px;
+  animation: scroll-wheel-ball 1.2s ease-out infinite;
+}
+
+@keyframes scroll-wheel-ball {
+  0% {
+    bottom: 30px;
+  }
+  5% {
+    top: 5px;
+  }
+  32% {
+    bottom: 5px;
+  }
+  66% {
+    top: 30px;
+    bottom: 5px;
+  }
+  100% {
+    top: 5px;
+    bottom: 30px;
+  }
+}
+/* Media Query to style viewports that are 1024px and Below */
+@media (max-width: 1024px) {
+  .ibong-adarna-title a {
+    font-size: 30px;
+    top: 75%;
+    left: 73%;
+    padding: 10px 20px;
+  }
+}
+/* Media Query to style viewports that are 768px and Below */
+@media (max-width: 768px) {
+  .ibong-adarna-title h1 {
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    font-size: 20vw;
+    line-height: 0.8;
+    margin-top: 0;
+    text-align: center;
+  }
+  .ibong-adarna-title a {
+    font-size: 20px;
+    top: 75%;
+    left: 73%;
+    padding: 10px 20px;
+  }
+}
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .ibong-adarna-title h1 {
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+    font-size: 20vw;
+    line-height: 0.8;
+    margin-top: 0;
+    text-align: center;
+  }
+  .ibong-adarna-title a {
+    font-size: 10px;
+    top: 85%;
+    left: 70%;
+    padding: 10px 20px;
+  }
+  /* This adjusts the scrolling-effect. */
+  .scroll-wheel-main-container {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* This adjusts the scroll-container's size. */
+  .scroll-wheel-container {
+    width: 20px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+  /* This adjusts the scroll-wheel's ball size. */
+  .scroll-wheel-ball {
+    width: 9px;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    bottom: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
