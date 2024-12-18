@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS/Stylesheets -->
+    <link rel="stylesheet" href="/Stylesheets/style.css">
+
+    <!-- Link to the Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Website Title -->
+    <title>Ibong Adarna</title>
+
+    <!-- Website Icon -->
+    <link rel="icon" href="/Images/Ibong Adarna Logo.jpg">
+
+</head>
+<body>
+
+  <!-- Website Preloader Section -->
+  <div class="main-preloader-container">
+
+    <!-- This is the black curtain that would unveil the website. -->
+    <div class="preloader-curtain"></div>
+    <div class="preloader-contents">
+
+      <!-- This is the start button that unveils the website's content when clicked. -->
+      <div class="start-website-button">CLICK TO START</div>
+      <!-- This is the container that would inform the user to use headphones. I used a png image for the Headphone Icon. -->
+      <div class="use-headphone-message">
+        <img src="/Images/Headphone.png" alt="Headphone Icon" class="headphone-icon">
+        <div>THIS SITE USES AUDIO<br>HEADPHONES ARE RECOMMENDED</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- These are the toggles for the website. -->
+  <div class="website-backgroundmusic-autoscroll-and-fullscreen-toggles">
+
+    <!-- Background Music Toggle -->
+    <label><input type="checkbox" id="background-music-toggle" checked />Play Background Music</label>
+    <!-- Auto Scroll Toggle -->
+    <label><input type="checkbox" id="auto-scroll-toggle" />Auto Scroll</label>
+    <!-- Full Screen Toggle -->
+    <label><input type="checkbox" id="fullscreen-toggle" />Full Screen Mode</label>
+
+  </div>
+
+  <!-- This is the background music for the website. -->
+  <audio id="background-music" loop><source src="/Music/Ibong Adarna Website Background Music.mp3" type="audio/mp3" /></audio>
+  
+
+    <!-- Horizontal Navigation Menu -->
+    <nav>
+      <div class="Navigation-Menu-Container">
+          <!-- Ibong Adarna Website Logo -->
+          <div class="ibong-adarna-logo"><a href="#">
+              <!-- Ibong Adarna Website Logo Image -->
+              <img src="/Images/Ibong Adarna Logo.jpg" alt="Ibong Adarna Logo">
+          </a>
+        </div>
+
+          <!-- Menu and Close Button - Responsive -->
+          <input type="radio" name="slider" id="Responsive-Menu-Button">
+          <input type="radio" name="slider" id="Responsive-Close-Button">
+
+          <!-- Navigational Links (including Home and Chapter 1 to 10) -->
+          <ul class="Navigation-Menu-Links">
+
+              <!-- Close Button -->
+              <label for="Responsive-Close-Button" class="btn Responsive-Close-Button">
+                  <!-- Close Button Icon -->
+                  <i class='bx bx-x-circle'></i>
+              </label>
+
+              <!-- Navigational Links -->
+              <li>
+                  <a href="#">Home</a>
+                  <a href="#chapter-1">Chapter 1</a>
+                  <a href="#chapter-2">Chapter 2</a>
+                  <a href="#chapter-3">Chapter 3</a>
+                  <a href="#chapter-4">Chapter 4</a>
+                  <a href="#chapter-5">Chapter 5</a>
+                  <a href="#chapter-6">Chapter 6</a>
+                  <a href="#">Sign In</a>
+                  <a href="#">Sign Up</a>
+              </li> 
+
+          </ul>
+
+          <!-- Menu Button -->
+          <label for="Responsive-Menu-Button" class="btn Responsive-Menu-Button">
+              <!-- Menu Button Icon -->
+              <i class='bx bx-menu'></i>
+          </label>
+      </div>
+  </nav>
+    
+
+    <!-- Opening Section -->
+    <div class="ibong-adarna-title">
+        <h1>Ibong <span>Adarna</h1>
+
+          <!-- This is the Start Button that would direct the user to chapter 1. -->
+          <a href="#chapter-1">Start</a>
+
+          <!-- This is the Scroll-wheel Icon container. -->
+          <div class="scroll-wheel-main-container">
+          <div class="scroll-wheel-container">
+            <!-- The scroll-wheel ball -->
+          <div class="scroll-wheel-ball"></div>
+          </div>
+          </div>
+    </div>
+
+    
+
+
+
+
+
+  <!-- This is the link to the JavaScript. -->
+  <script src="/JavaScript/script.js"></script>
+
+</body>
+</html>
