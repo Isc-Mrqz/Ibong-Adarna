@@ -120,3 +120,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+
+// This plays the Ibong Adarna's chirp upon hovering the image.
+const ibong_adarna_image = document.getElementById('ibong-adarna-image');
+  const ibong_adarna_chirp_sound = document.getElementById('ibong-adarna-chirp');
+
+  // This is the Event listener that plays the sound upon hover.
+  ibong_adarna_image.addEventListener('mouseover', () => {
+    ibong_adarna_chirp_sound.play();
+  });
+
+  // This pauses the sound when mouse leaves the image.
+  ibong_adarna_image.addEventListener('mouseout', () => {
+    ibong_adarna_chirp_sound.pause();
+    // This resets the sound to the beginning.
+    ibong_adarna_chirp_sound.currentTime = 0; 
+  });
