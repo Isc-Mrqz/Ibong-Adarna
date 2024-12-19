@@ -975,3 +975,190 @@ $container-block-size: max(400px, 100dvb);
 .diego-and-pedro-flipping-card h2{
   font-size: 3em;
 }
+
+
+
+
+// Chapter 2
+
+// This styles the "main-chapter-2-container" container that would hold all the contents for Chapter 2. This include styling its background to black and white text with proper padding.
+.main-chapter-2-container { 
+  position: relative;
+  color: white;
+  background-color: black;
+  font-size: 1.5rem;
+  padding: 3rem;
+  line-height: 1.5;
+}
+
+
+// This styles the container that is responsible for the layout of the rotating image carousel.
+.main-ibong-adarna-section-2 {
+  display: grid;
+  position: relative;
+  min-block-size: auto;
+  background-color: black;
+  overflow: hidden;
+}
+
+
+// I used a flexbox for centering the rotating image carousel and sets the height and width of the container.
+.rotating-image-carousel {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+// This is used for the 3D rotation animation of the carousel and sets up the transform properties for the rotating images.
+.main-rotating-image-carousel-container {
+  position: absolute; 
+  width: 250px;
+  height: 250px;
+  transform-style: preserve-3d;
+  animation: rotating-the-image-carousel 9s linear infinite;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+/* This pauses or stops the rotating image carousel on hover. */
+.main-rotating-image-carousel-container:hover {
+  animation-play-state: paused;
+}
+
+  // I used CSS keyframes for the rotating animation of the image carousel.
+  @keyframes rotating-the-image-carousel {
+    from {
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      transform: perspective(2000px) rotateY(1turn);
+    }
+  }
+  
+
+// This positions each item or image in the carousel in 3D space using rotation and perspective.
+.hermit-tools {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc((360deg / var(--rotating-image-carousel-item-quantity)) * var(--rotating-image-carousel-item)))
+  translateZ(calc((250px + 250px) + 0px));
+  overflow: hidden;
+}
+
+// This is to ensure that the image inside the hermit tool container and fits its space.
+.image-of-the-hermit-tools {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// This is to ensure that the image maintains its aspect ratio and fits within the container.
+.image-of-the-hermit-tools img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
+
+// This is to style the text that appears under the carousel including its color, text size, alignment, and spacing.
+.hover-to-pause-instruction {
+  color: white; 
+  font-size: 1.2rem; 
+  text-align: center;
+  margin-top: 50px; 
+}
+  
+// I set a maximum width to this container and make sure that it is centered.
+.image-perspective-effect-main-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+// This styling adds a 3D perspective to the images inside it.
+.image-perspective-effect {
+  position: relative;
+  width: 100%;
+  perspective: 1000px;
+
+  // This is for the sides of the perspective container.
+  .perspective-sides {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+  }
+
+  // This is to position the first two sides at the top of the container.
+  .perspective-sides:first-child,
+  .perspective-sides:nth-child(2) {
+    top: 0;
+  }
+
+  // This is to position the first and third sides at the left of the container.  
+  .perspective-sides:first-child,
+  .perspective-sides:nth-child(3) {
+    left: 0;
+  }
+
+  // This is to position the second and fourth sides at the right of the container.  
+  .perspective-sides:nth-child(2),
+  .perspective-sides:nth-child(4) {
+    right: 0;
+  }
+
+  // This is to position the third and fourth sides at the bottom of the container.  
+  .perspective-sides:nth-child(3),
+  .perspective-sides:nth-child(4) {
+    bottom: 0;
+  }
+
+  // This is to ensure that the image would fit the container and to add transitions.
+  img {
+    display: block;
+    width: 100%;
+    transition: transform 0.6s ease, z-index 0.1s ease;
+  }
+
+  // This is to increase the z-index to bring the side to the front.
+  &:hover .perspective-sides {
+    z-index: 2;
+  }
+  // This is to lower the z-index of the image to place it behind the sides.
+  &:hover img {
+    z-index: 1;
+  }
+
+  // This is responsible for the rotation of the image when hovering over a specific side.
+  .perspective-sides:first-child:hover ~ img {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  }
+  .perspective-sides:nth-child(2):hover ~ img {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  }
+  .perspective-sides:nth-child(3):hover ~ img {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(-5deg);
+  }
+  .perspective-sides:nth-child(4):hover ~ img {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
+  }
+}
+
+
+
+// Chapter 3
+// This styles the "main-chapter-3-container" container that would hold all the contents for Chapter 2. This include styling its background to white and black text with proper padding.
+.main-chapter-3-container {
+  color: black;
+  background-color: white;
+  position: relative;
+  font-size: 1.5rem;
+  padding: 3rem;
+  line-height: 1.5;
+}
