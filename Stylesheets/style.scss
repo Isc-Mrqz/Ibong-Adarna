@@ -1162,3 +1162,80 @@ $container-block-size: max(400px, 100dvb);
   padding: 3rem;
   line-height: 1.5;
 }
+
+.armenia-image-container {
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin: 50px 0; 
+}
+
+.armenia-image-container img {
+  display: block; 
+  width: 100%;
+  height: auto; 
+  max-width: 1200px;
+  margin: 0 auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect to slightly enlarge and enhance the shadow on hover */
+.armenia-image-container img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); 
+}
+
+
+// Mysterious Well
+// This styles the container that stores the image and the torchlight including its positioning and size.
+.well-main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+}
+
+// This is the styling for the torchlight effect that will be displayed over the image.
+#torchlight {
+  --torchlight-X-coordinate: 50vw;
+  --torchlight-Y-coordinate: 50vh; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; 
+}
+
+// This is to create that circular light effect that has a radial-gradient.
+#torchlight:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  // This is the torchlight effect.
+  background: radial-gradient(
+    circle 40em at var(--torchlight-X-coordinate) var(--torchlight-Y-coordinate),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  );
+}
+
+// This is the styling for the image shown for the well.
+.well-main-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%); 
+  object-fit: cover; 
+  object-position: center; 
+  z-index: 1; 
+}
+
+
