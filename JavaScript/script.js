@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 // This plays the Ibong Adarna's chirp upon hovering the image.
 const ibong_adarna_image = document.getElementById('ibong-adarna-image');
   const ibong_adarna_chirp_sound = document.getElementById('ibong-adarna-chirp');
@@ -137,3 +138,37 @@ const ibong_adarna_image = document.getElementById('ibong-adarna-image');
     // This resets the sound to the beginning.
     ibong_adarna_chirp_sound.currentTime = 0; 
   });
+
+
+
+// Well Flashlight Feature
+  
+// This selects the torchlight and container elements from the DOM.
+// This is the element that creates the torchlight effect
+let torchlight = document.getElementById("torchlight");
+// This is the container that stores both the image and the torchlight.
+let wellContainer = document.querySelector(".well-main-container");
+
+// I created this function to detect if the device support touch. 
+function touchDetected() {
+  // It returns true if touch events are confirmed to be supported.
+  return 'ontouchstart' in window;
+}
+
+// This is another function to update the torchlight's position according to the user's cursor or touch event.
+function updateTorchlightPosition(event) {
+  // This gets the container's position relative to the screen to account for any scrolling or offset.
+  const containerArea = wellContainer.getBoundingClientRect();
+
+  // This gets the current position of the user's cursor or touch relative to the container.
+  let cursorcoordinateX = touchDetected() ? event.touches[0].clientX - containerArea.left : event.clientX - containerArea.left;
+  let cursorcoordinateY = touchDetected() ? event.touches[0].clientY - containerArea.top : event.clientY - containerArea.top;
+
+  // This is to update the torchlight's position using CSS variables and controls where the flashlight effect is shown.
+  torchlight.style.setProperty("--torchlight-X-coordinate", cursorcoordinateX + "px");
+  torchlight.style.setProperty("--torchlight-Y-coordinate", cursorcoordinateY + "px");
+}
+
+// These are Event Listeners to update where the torchlight's position is.
+document.addEventListener("mousemove", updateTorchlightPosition);
+document.addEventListener("touchmove", updateTorchlightPosition);
