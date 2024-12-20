@@ -172,3 +172,35 @@ function updateTorchlightPosition(event) {
 // These are Event Listeners to update where the torchlight's position is.
 document.addEventListener("mousemove", updateTorchlightPosition);
 document.addEventListener("touchmove", updateTorchlightPosition);
+
+
+
+// The King's Tasks
+
+// This gets the dropdown element (which is the select menu) by its ID.
+const kingtrialdropdown = document.getElementById("trialsdropdownmenu");
+
+// This gets the container that holds the images of the King's trials.
+const kingtrialsimageContainer = document.querySelector(".king-trials-images");
+
+// I created this event listener to the dropdown menu to detect when a new option is selected by the user.
+kingtrialdropdown.addEventListener("change", () => {
+
+  // This gets the value of the selected option (which is the the trial number).
+  const selected = kingtrialdropdown.value;
+
+  // This adds a class that indicates the trial is being loaded.
+  kingtrialsimageContainer.classList.add("load-selected-trial");
+
+  // This clears the currently selected trial from the image container.
+  kingtrialsimageContainer.dataset.kingTrialSelected = "";
+
+  setTimeout(() => {
+    // This removes the loading class from the kingtrialsimageContainer container.
+    kingtrialsimageContainer.classList.remove("load-selected-trial");
+
+    // This sets the selected trial's value in the kingtrialsimageContainer container's data attribute.
+    kingtrialsimageContainer.dataset.kingTrialSelected = selected; 
+    // A 1.6 seconds delay.
+  }, 1600);
+});
