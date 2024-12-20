@@ -1239,3 +1239,94 @@ $container-block-size: max(400px, 100dvb);
 }
 
 
+
+
+// This is the styling for the container that holds King Salermo's Trials including using flexbox layout and setting its size.
+.king-trials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 50px;
+}
+
+// This is the styling for the select drop down menu including its alignment, size, and spacing.
+select {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .5em;
+  padding: 1em;
+  border: 0;
+  border-bottom: solid 2px ; 
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+// I also used a flexbox layout for the container that holds the images of the King's trials. This is where I centered it and added margins.
+.king-trials-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 50px;
+  width: 650px;
+  height: 650px;
+
+  // This is to hide the images, loading message, and "no-selected-king-trial" message at first.
+  img,
+  .king-trials-loading,
+  .no-selected-king-trial {
+    display: none;
+    letter-spacing: .3em;
+    font-weight: 700;
+  }
+
+  // This is if no trial is selected by the user and it's not in the loading state.
+  &[data-king-trial-selected=""]:not(.load-selected-trial) {
+    background: black;
+    // This is to show the "no-selected-king-trial" message if no image is selected by the user.
+    .no-selected-king-trial {
+      display: block;
+    }
+  }
+
+  // This is when a trial is being loaded.
+  &.load-selected-trial {
+    background: black;
+    // This is to show the loading message.
+    .king-trials-loading {
+      display: block;
+      animation: load-selected-trial 1.6s;
+    }
+  }
+}
+
+// This is to show the image that corresponds to its selected trial based on the data attributes.
+.king-trials-images {
+  &[data-king-trial-selected="1"] img[data-king-trial-image="1"],
+  &[data-king-trial-selected="2"] img[data-king-trial-image="2"],
+  &[data-king-trial-selected="3"] img[data-king-trial-image="3"],
+  &[data-king-trial-selected="4"] img[data-king-trial-image="4"],
+  &[data-king-trial-selected="5"] img[data-king-trial-image="5"],
+  &[data-king-trial-selected="6"] img[data-king-trial-image="6"],
+  &[data-king-trial-selected="7"] img[data-king-trial-image="7"] {
+    display: block;
+  }
+}
+
+// I used a @keyframes animation to increase the letter-spacing during the animation for added loading effect.
+@keyframes load-selected-trial {
+  to {
+    letter-spacing: .5em;
+  }
+}
+
+// This is the styling for the images within the "king-trials-images" container ensuring that it is hidden by default, and when showed, it ensures the image covers the entire container without any distortion.
+.king-trials-images img {
+  display: none;   
+  width: 100%;     
+  height: 100%;     
+  object-fit: cover; 
+}
