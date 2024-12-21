@@ -1092,4 +1092,130 @@ select:focus, select:active {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* Wrapper for both cards */
+.main-sliding-unveil-card-container {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 50px; /* Space between the cards */
+}
+
+.sliding-unveil-card-container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* This is to position the second card to the right side of the screen. */
+.sliding-unveil-card-container.right-side-card {
+  margin-left: auto;
+}
+
+.unveiling-image-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.unveiling-image-card .unveiling-image-card-front-view {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: 0.6s;
+  overflow: hidden;
+}
+
+.unveiling-image-card .unveiling-image-card-front-view img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+.unveiling-image-card .unveiling-image-card-front-view p {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-align: center;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  z-index: 2;
+  transition: 1.2s;
+}
+
+.unveiling-image-card .unveiling-image-card-back-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: black;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateX(-100%);
+  transition: 1.2s;
+}
+
+/* Hover effect for the first card */
+.unveiling-image-card:hover .unveiling-image-card-back-view {
+  transform: translateY(0);
+}
+
+.unveiling-image-card:hover .unveiling-image-card-front-view {
+  transition: 2s;
+  transform: translateX(-50%);
+}
+
+.unveiling-image-card:hover .unveiling-image-card-front-view p {
+  opacity: 0;
+}
+
+.paragraph-chapter5 {
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Default state for the right-slide-unveil card */
+.right-slide-unveil .unveiling-image-card-back-view {
+  transform: translateX(100%);
+}
+
+/* Hover effect for the right-slide-unveil card */
+.right-slide-unveil:hover .unveiling-image-card-back-view {
+  transform: translateX(0);
+}
+
+.right-slide-unveil .unveiling-image-card-front-view {
+  transform: translateX(0);
+}
+
+.right-slide-unveil:hover .unveiling-image-card-front-view {
+  transition: 2s;
+  transform: translateX(50%);
 }/*# sourceMappingURL=style.css.map */
