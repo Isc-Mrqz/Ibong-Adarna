@@ -1583,3 +1583,48 @@ select {
 .book-open-container:hover .book-open-cover-with-hover-me-text {
   transform: rotatey(-100deg);
 }
+
+
+
+// Credits Section
+// For this section, I used a parallax effect which makes the image keep still in the background while the text is the one scrolling.
+.main-credits-section-container {
+  position: relative;
+  background: url(/Images/Ibong\ Adarna.png) no-repeat fixed center / cover;
+  color: white;
+}
+
+// I added a semi-transparent dark overlay so that the text would be readability over the background image.
+.main-credits-section-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.347); 
+}
+
+// This is where I ensured that the contents is position within the parent container and spaced correctly.
+.main-credits-section-container div {
+  position: relative;
+  margin: 50px;
+  padding: 100px 0;
+}
+
+// I styled the h1 or heading tag to have 3em of font size and to be bold.
+.main-credits-section-container h1 {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+// I styled the p or paragraph tag to have 1.5em of font size and 1.4 space between the lines.
+.main-credits-section-container p {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+
+// This adds a white line below the container to divide each section.
+.credits-section-contents {
+  border-bottom: 3px solid white;
+}
