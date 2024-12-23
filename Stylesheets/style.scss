@@ -1628,3 +1628,77 @@ select {
 .credits-section-contents {
   border-bottom: 3px solid white;
 }
+
+
+
+
+// Footer Section
+// I created a footer that would have a text between two images that would continuously loop through the screen. It would go from right to left.
+
+// THis is to center the content within the footer horizontally and vertically. This is where I also set the height and hid any overflow.
+footer {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  font-size: 1.5em; 
+  color: white;
+  background-color: black;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 3em; 
+  overflow: hidden;
+}
+
+// This styles the text to be on one line and applies the sliding animation.
+footer p {
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 2px;
+  animation: slidefootertextLefttoRight 15s linear infinite;
+}
+
+// This is to position the images before and after the text.
+footer p::before,
+footer p::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; 
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+
+// This is the Ibong Adarna Logo image before the text.
+footer p::before {
+  left: -60px;
+  background-image: url('/Images/Ibong\ Adarna\ Logo.jpg'); 
+}
+
+// This is the Ibong Adarna Logo image after the text.
+footer p::after {
+  right: -60px; 
+  background-image: url('/Images/Ibong\ Adarna\ Logo.jpg');
+}
+
+// This is the @keyframes animation for the text within the footer.
+@keyframes slidefootertextLefttoRight {
+  0% {
+    // The text is initially positioned off-screen to the right.
+    left: 100%;
+  }
+  50% {
+    // This centers the text.
+    left: 50%;
+    transform: translateX(-50%); 
+  }
+  100% {
+    // The text moves off-screen to the left.
+    left: -100%;
+  }
+}
+
+
