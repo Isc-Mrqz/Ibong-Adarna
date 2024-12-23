@@ -1472,3 +1472,114 @@ select {
   transform: translateX(50%);
   transition: 2s;
 }
+
+
+
+
+// Image that goes up upon hover.
+
+// This styles the "main-image-up-container" container by centering its contents horizontally and vertically using flexbox layout.
+.main-image-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+// This is the styling to give the image container a 3D rotation effect.
+.image-up-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: auto;
+  transform: rotateX(-50deg) rotateY(5deg) rotateZ(30deg);
+  transition: 1.2s;
+  cursor: pointer;
+}
+
+// This styling ensures that the image fits inside the container while maintaining its aspect ratio.
+.image-up-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+// This is to remove the rotation upon hovering.
+.image-up-container:hover {
+  transform: rotate(0deg);
+}
+
+// This is to add a blue, red, and yellow gradient background color.
+.image-up-container, .image-up-container::before {
+  background: linear-gradient(50deg, blue 0%, red 50%, yellow 100%);
+}
+
+// This is for the glowing blur effect behind the container.
+.image-up-container::before {
+  content: '';
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  z-index: -1;
+}
+
+
+
+
+
+// This centers the "main-book-open-container" container.
+.main-book-open-container {
+  display: flex;
+  justify-content: center;
+}
+
+// This is to give the "book-open-container" container a 3d perspective effect.
+.book-open-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 80%;
+  height: 250px;
+  background-color: white;
+  transform: preserve-3d;
+  perspective: 2000px;
+}
+
+// This is the styling for the paragraph or p tag within ".book-open-container" container including setting its font size and giving it a bold font weight.
+.book-open-container p {
+  font-size: 6.5em;
+  font-weight: 700;
+}
+
+// This is the styling for the paragraph or p tag ("Hover me" within ".book-open-cover-with-hover-me-text" container including setting its font size and giving it a bold font weight.
+.book-open-cover-with-hover-me-text p {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+// This is the styling for the book cover with hover effect.
+.book-open-cover-with-hover-me-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0;
+  transition: 1.2s;
+  cursor: pointer;
+}
+
+// This is the hover effect that gives it the opening book effect by rotating the book cover 100 degrees around the Y-axis.
+.book-open-container:hover .book-open-cover-with-hover-me-text {
+  transform: rotatey(-100deg);
+}
