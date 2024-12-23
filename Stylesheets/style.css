@@ -1306,4 +1306,40 @@ select:focus, select:active {
 
 .book-open-container:hover .book-open-cover-with-hover-me-text {
   transform: rotatey(-100deg);
+}
+
+.main-credits-section-container {
+  position: relative;
+  background: url(/Images/Ibong\ Adarna.png) no-repeat fixed center/cover;
+  color: white;
+}
+
+.main-credits-section-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.347);
+}
+
+.main-credits-section-container div {
+  position: relative;
+  margin: 50px;
+  padding: 100px 0;
+}
+
+.main-credits-section-container h1 {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.main-credits-section-container p {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+
+.credits-section-contents {
+  border-bottom: 3px solid white;
 }/*# sourceMappingURL=style.css.map */
