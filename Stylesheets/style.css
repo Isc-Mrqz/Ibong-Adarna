@@ -467,6 +467,7 @@ nav input {
 .main-container-for-characters {
   display: grid;
   position: relative;
+  margin-bottom: 10vh;
 }
 @media (min-width: 768px) {
   .main-container-for-characters {
@@ -614,7 +615,6 @@ nav input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 30px;
   text-align: center;
 }
@@ -622,9 +622,6 @@ nav input {
 .king-dreaming-contents {
   position: relative;
   background-color: white;
-  width: 100%;
-  max-width: 800px;
-  height: 600px;
   box-shadow: 2px 3px 10px #444444;
   overflow: hidden;
 }
@@ -731,6 +728,7 @@ nav input {
   }
 }
 .turn-to-stone p {
+  position: relative;
   color: white;
   background-color: black;
   font-size: 1.5rem;
@@ -1027,11 +1025,14 @@ nav input {
 }
 
 .king-trials {
+  position: relative;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   margin-top: 50px;
 }
 
@@ -1051,26 +1052,17 @@ select:focus, select:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   margin: 50px;
-  width: 650px;
-  height: 650px;
 }
 .king-trials-images img,
-.king-trials-images .king-trials-loading,
-.king-trials-images .no-selected-king-trial {
+.king-trials-images .king-trials-loading {
   display: none;
   letter-spacing: 0.3em;
   font-weight: 700;
 }
-.king-trials-images[data-king-trial-selected=""]:not(.load-selected-trial) {
-  background: black;
-}
-.king-trials-images[data-king-trial-selected=""]:not(.load-selected-trial) .no-selected-king-trial {
-  display: block;
-}
 .king-trials-images.load-selected-trial {
-  background: black;
+  background: white;
 }
 .king-trials-images.load-selected-trial .king-trials-loading {
   display: block;
@@ -1103,8 +1095,8 @@ select:focus, select:active {
 
 .sliding-unveil-card-container {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: 60vw;
+  height: 60vh;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -1217,6 +1209,18 @@ select:focus, select:active {
   transition: 2s;
 }
 
+.unveiling-image-card-back-view p {
+  font-size: 1em;
+  margin: 20px;
+}
+
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .unveiling-image-card-back-view p {
+    margin: 10px;
+    font-size: 13px;
+  }
+}
 .main-image-up-container {
   display: flex;
   justify-content: center;
@@ -1228,8 +1232,6 @@ select:focus, select:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: auto;
   transform: rotateX(-50deg) rotateY(5deg) rotateZ(30deg);
   transition: 1.2s;
   cursor: pointer;
@@ -1265,6 +1267,7 @@ select:focus, select:active {
 .main-book-open-container {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .book-open-container {
@@ -1281,7 +1284,7 @@ select:focus, select:active {
 }
 
 .book-open-container p {
-  font-size: 6.5em;
+  font-size: 3.5em;
   font-weight: 700;
 }
 
@@ -1326,7 +1329,7 @@ select:focus, select:active {
 
 .main-credits-section-container div {
   position: relative;
-  margin: 50px;
+  margin: 20px;
   padding: 100px 0;
 }
 
@@ -1344,6 +1347,12 @@ select:focus, select:active {
   border-bottom: 3px solid white;
 }
 
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .main-credits-section-container {
+    font-size: 10px;
+  }
+}
 footer {
   display: flex;
   justify-content: center;
