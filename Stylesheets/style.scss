@@ -355,6 +355,7 @@ right: 3rem;
 font-size: 20vw;
 line-height: .8;
 text-align: center;
+
 }
 
 // This is the styling for the span or subheading inside the main title. It ensures that the word Adarna is seen on a new line and that its font size is smaller.
@@ -558,6 +559,7 @@ $container-block-size: max(400px, 100dvb);
 .main-container-for-characters {
   display: grid;
   position: relative;
+  margin-bottom: 10vh;
 
   // This creates a two-column layout for screens of 768 pixels and above.
   @media (min-width: 768px) {
@@ -745,7 +747,6 @@ $container-block-size: max(400px, 100dvb);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 30px;
   text-align: center;
 }
@@ -754,9 +755,6 @@ $container-block-size: max(400px, 100dvb);
 .king-dreaming-contents {
   position: relative;
   background-color: white;
-  width: 100%;
-  max-width: 800px;
-  height: 600px;
   box-shadow: 2px 3px 10px #444444;
   overflow: hidden;
 }
@@ -883,6 +881,7 @@ $container-block-size: max(400px, 100dvb);
 
 // This sets the paragraph tag within the "turn-to-stone" container color, size, background color, padding, and alignment.
 .turn-to-stone p {
+  position: relative;
   color: white; 
   background-color: black; 
   font-size: 1.5rem; 
@@ -1240,14 +1239,16 @@ $container-block-size: max(400px, 100dvb);
 
 
 
-
 // This is the styling for the container that holds King Salermo's Trials including using flexbox layout and setting its size.
 .king-trials {
+  position: relative;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   margin-top: 50px;
 }
 
@@ -1269,32 +1270,22 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   margin: 50px;
-  width: 650px;
-  height: 650px;
 
-  // This is to hide the images, loading message, and "no-selected-king-trial" message at first.
+  // This is to hide the images and loading message at first.
   img,
-  .king-trials-loading,
-  .no-selected-king-trial {
+  .king-trials-loading {
     display: none;
     letter-spacing: .3em;
     font-weight: 700;
   }
 
-  // This is if no trial is selected by the user and it's not in the loading state.
-  &[data-king-trial-selected=""]:not(.load-selected-trial) {
-    background: black;
-    // This is to show the "no-selected-king-trial" message if no image is selected by the user.
-    .no-selected-king-trial {
-      display: block;
-    }
-  }
+
 
   // This is when a trial is being loaded.
   &.load-selected-trial {
-    background: black;
+    background: white;
     // This is to show the loading message.
     .king-trials-loading {
       display: block;
@@ -1302,6 +1293,8 @@ select {
     }
   }
 }
+
+
 
 // This is to show the image that corresponds to its selected trial based on the data attributes.
 .king-trials-images {
@@ -1344,8 +1337,8 @@ select {
 // This is the styling for the card including its size, rounded corners, and pointer events.
 .sliding-unveil-card-container {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: 60vw;
+  height: 60vh;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -1473,8 +1466,18 @@ select {
   transition: 2s;
 }
 
+.unveiling-image-card-back-view p {
+  font-size: 1em;
+  margin: 20px;
+}
 
-
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .unveiling-image-card-back-view p {
+    margin: 10px;
+    font-size: 13px;
+  }
+}
 
 // Image that goes up upon hover.
 
@@ -1491,8 +1494,6 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: auto;
   transform: rotateX(-50deg) rotateY(5deg) rotateZ(30deg);
   transition: 1.2s;
   cursor: pointer;
@@ -1536,6 +1537,7 @@ select {
 .main-book-open-container {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 // This is to give the "book-open-container" container a 3d perspective effect.
@@ -1554,7 +1556,7 @@ select {
 
 // This is the styling for the paragraph or p tag within ".book-open-container" container including setting its font size and giving it a bold font weight.
 .book-open-container p {
-  font-size: 6.5em;
+  font-size: 3.5em;
   font-weight: 700;
 }
 
@@ -1608,7 +1610,7 @@ select {
 // This is where I ensured that the contents is position within the parent container and spaced correctly.
 .main-credits-section-container div {
   position: relative;
-  margin: 50px;
+  margin: 20px;
   padding: 100px 0;
 }
 
@@ -1629,6 +1631,12 @@ select {
   border-bottom: 3px solid white;
 }
 
+/* Media Query to style viewports that are 480px and Below */
+@media (max-width: 480px) {
+  .main-credits-section-container {
+  font-size: 10px;
+  }
+}
 
 
 
@@ -1700,5 +1708,3 @@ footer p::after {
     left: -100%;
   }
 }
-
-
