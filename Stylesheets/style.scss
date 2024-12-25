@@ -124,7 +124,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 10px;
-  bottom: 30px;
+  bottom: 50px;
   right: 10px;
   border-radius: 8px;
   z-index: 1500;
@@ -176,6 +176,7 @@ nav input{
   height: 70px; 
   width: auto; 
   margin-top: 20px;
+  cursor: pointer;
 }
 
 /* Styling for the Navigational Links */
@@ -1707,4 +1708,60 @@ footer p::after {
     // The text moves off-screen to the left.
     left: -100%;
   }
+}
+
+
+
+// This is to hide the elements with the class .hidesection.
+.hidesection {
+  display: none;
+}
+
+// This is the styling for the sign-up and login forms including their size and color.
+.sign-up-log-in-form-container {
+  margin: auto;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.625);
+}
+
+// This is the styling for the h1 or heading 1 tags within sign-up and login forms including their size, spacing, and alignment.
+.sign-up-log-in-form-container h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+// This is to center the p or paragraph tag within the .sign-up-log-in-form-container container.
+.sign-up-log-in-form-container p {
+  text-align: center;
+}
+
+// This is to style the input forms within the .sign-up-log-in-form-container container includings their space, size, and border color.
+.sign-up-log-in-form-container input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+// This is to style the button within the .sign-up-log-in-form-container container includings their text size, color, spacing, size, and transition duration.
+.sign-up-log-in-form-container button {
+  font-size: 1em;
+  color: white;
+  background-color: black;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+// This is to enlarge and and change the color of the button upon hover.
+.sign-up-log-in-form-container button:hover {
+  transform: scale(1.1);
+  background-color: #333;
 }
