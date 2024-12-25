@@ -57,10 +57,9 @@
     <nav>
       <div class="Navigation-Menu-Container">
           <!-- Ibong Adarna Website Logo -->
-          <div class="ibong-adarna-logo"><a href="#">
+          <div class="ibong-adarna-logo">
               <!-- Ibong Adarna Website Logo Image -->
               <img src="/Images/Ibong Adarna Logo.jpg" alt="Ibong Adarna Logo">
-          </a>
         </div>
 
           <!-- Menu and Close Button - Responsive -->
@@ -78,17 +77,11 @@
 
               <!-- Navigational Links -->
               <li>
-                  <a href="#">Home</a>
-                  <a href="#chapter-1">Chapter 1</a>
-                  <a href="#chapter-2">Chapter 2</a>
-                  <a href="#chapter-3">Chapter 3</a>
-                  <a href="#chapter-4">Chapter 4</a>
-                  <a href="#chapter-5">Chapter 5</a>
-                  <a href="#chapter-6">Chapter 6</a>
-                  <a href="#">Sign In</a>
-                  <a href="#">Sign Up</a>
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="signup">Sign Up</a>
+                <a href="#" data-page="login">Login</a>
               </li> 
-
+              
           </ul>
 
           <!-- Menu Button -->
@@ -100,23 +93,30 @@
   </nav>
     
 
+
+    <div id="content" class="container">
+      <!-- Home Page -->
+      <div id="home" class="page">
+
+
     <!-- Opening Section -->
     <div class="ibong-adarna-title">
-        <h1>Ibong <span>Adarna</h1>
+      <h1>Ibong <span>Adarna</h1>
 
-          <!-- This is the Start Button that would direct the user to chapter 1. -->
-          <a href="#chapter-1">Start</a>
+        <!-- This is the Start Button that would direct the user to chapter 1. -->
+        <a href="#chapter-1">Start</a>
 
-          <!-- This is the Scroll-wheel Icon container. -->
-          <div class="scroll-wheel-main-container">
-          <div class="scroll-wheel-container">
-            <!-- The scroll-wheel ball -->
-          <div class="scroll-wheel-ball"></div>
-          </div>
-          </div>
-    </div>
+        <!-- This is the Scroll-wheel Icon container. -->
+        <div class="scroll-wheel-main-container">
+        <div class="scroll-wheel-container">
+          <!-- The scroll-wheel ball -->
+        <div class="scroll-wheel-ball"></div>
+        </div>
+        </div>
+  </div>
 
-    
+
+
     <!-- Chapter 1 -->
     <div class="main-chapter-1-container">
       <!-- I used the "anchor-offset" class to make sure that the navigation menu won't cover the content when directed to chapter 1. -->
@@ -604,11 +604,69 @@
   <footer>
     <p>Made by Isaac Gerard Senoy Marquez</p>
   </footer>
-  
+
+
+      </div>
+
+      <!-- Sign-up Page -->
+       <!-- This is where the user would Sign up their username, email, and password. -->
+      <div id="signup" class="page hidesection">
+          <div class="sign-up-log-in-form-container">
+              <br><br><br><br><br>
+              <h1>Sign Up Section</h1>
+
+              <!-- Sign-up Description -->
+              <p>Create a new account by providing your details.</p>
+
+              <!-- Username -->
+              <input type="text" id="signup-name" placeholder="Please enter your name" required>
+
+              <!-- Email -->
+              <input type="email" id="signup-email" placeholder="Please enter your email" required>
+
+              <!-- Password -->
+              <input type="password" id="signup-password" placeholder="Please enter your password" required>
+
+              <!-- Sign-up Button -->
+              <button id="signup-btn">Sign Up</button>
+
+              <!-- Error message -->
+              <p id="signup-error" style="color: red; display: none;">Please complete all fields.</p>
+          </div>
+      </div>
+
+      <!-- Login Page -->
+       <!-- This is where the user would input their email and password to access the website's contents. -->
+      <div id="login" class="page hidesection">
+          <div class="sign-up-log-in-form-container">
+              <br><br><br><br><br>
+              <h1>Login Section</h1>
+
+              <!-- Login Description -->
+              <p>Enter your credentials to access your account.</p>
+
+              <!-- Email -->
+              <input type="email" id="login-email" placeholder="Please enter your email" required>
+
+              <!-- Password -->
+              <input type="password" id="login-password" placeholder="Please enter your password" required>
+
+              <!-- Log-in Button -->
+              <button id="login-btn">Login</button>
+
+              <!-- Error message -->
+              <p id="login-error" style="color: red; display: none;">The email or password you entered is incorrect.</p>
+          </div>
+      </div>
+
+  </div>
 
 
   <!-- This is the link to the JavaScript. -->
   <script src="/JavaScript/script.js"></script>
+
+  <!-- This is the link to the JavaScript for the navigation. -->
+  <script src="/navigation.js"></script>
 
 </body>
 </html>
