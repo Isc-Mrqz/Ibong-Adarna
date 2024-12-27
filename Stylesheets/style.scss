@@ -1476,7 +1476,7 @@ select {
 @media (max-width: 480px) {
   .unveiling-image-card-back-view p {
     margin: 10px;
-    font-size: 13px;
+    font-size: 20px;
   }
 }
 
@@ -1765,3 +1765,22 @@ footer p::after {
   transform: scale(1.1);
   background-color: #333;
 }
+
+
+
+// Reveal effect
+// This is the styling responsible for revealing the contents of the website when scrolling.
+
+// This hides the content at first and moves it downward.
+.reveal-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+// This class is added through JavaScript and used to smoothly reveal the content and positions it to its original position.
+.reveal-content.contentIsVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
