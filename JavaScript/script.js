@@ -204,3 +204,37 @@ kingtrialdropdown.addEventListener("change", () => {
     // A 1.6 seconds delay.
   }, 1600);
 });
+
+
+
+
+// Reveal Effect Feature
+
+// This waits until the DOM is fully loaded before running the script.
+document.addEventListener("DOMContentLoaded", function () {
+
+  // This selects all of the elements that has the class named "reveal-content" and will be revealed as the user scrolls the webpage.
+  const elements = document.querySelectorAll(".reveal-content");
+
+  // Create a new IntersectionObserver to track when elements appear in the viewport
+  const observer = new IntersectionObserver((entries) => {
+
+    // This loops through each entry or element that is being observed.
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+
+            // This is the condition that adds a class named "contentIsVisible" if the element is visible in the viewport.
+              entry.target.classList.add("contentIsVisible");
+          } else {
+
+
+              // This is another condition that removes the class named "contentIsVisible" if the the element is no longer in the viewport.
+              entry.target.classList.remove("contentIsVisible");
+          }
+      });
+      // I set the threshold to 10% visibility before triggering.
+  }, { threshold: 0.1 });
+
+  // This starts to observe each of the element named "reveal-content".
+  elements.forEach(element => observer.observe(element));
+});
