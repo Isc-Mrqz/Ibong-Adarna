@@ -1,4 +1,3 @@
-/* I imported the "Medieval Sharp" font from Google Fonts. */
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 html {
   scroll-behavior: smooth;
@@ -109,7 +108,6 @@ body {
   margin-right: 5px;
 }
 
-/* Styling for the Navigation Menu */
 nav {
   position: fixed;
   color: white;
@@ -119,7 +117,6 @@ nav {
   z-index: 50;
 }
 
-/* Styling for both the  nav and Navigation-Menu-Container container */
 nav .Navigation-Menu-Container {
   position: relative;
   max-width: 1290px;
@@ -132,12 +129,10 @@ nav .Navigation-Menu-Container {
   justify-content: space-between;
 }
 
-/* This is to hide the input elements in the Navigation Menu */
 nav input {
   display: none;
 }
 
-/* Styling for the Logo Image including size and top margin*/
 .ibong-adarna-logo img {
   height: 70px;
   width: auto;
@@ -145,17 +140,14 @@ nav input {
   cursor: pointer;
 }
 
-/* Styling for the Navigational Links */
 .Navigation-Menu-Container .Navigation-Menu-Links {
   display: inline-flex;
 }
 
-/* Styling to remove the bulletpoint */
 .Navigation-Menu-Links li {
   list-style: none;
 }
 
-/* Styling for the Navigational Links or Anchor tags */
 .Navigation-Menu-Links li a {
   position: relative;
   color: white;
@@ -164,7 +156,6 @@ nav input {
   text-decoration: none;
 }
 
-/* To add the underline on hover effect */
 .Navigation-Menu-Links li a::after {
   content: "";
   position: absolute;
@@ -176,28 +167,23 @@ nav input {
   transition: 0.7s ease;
 }
 
-/* To unveil or expand the underline */
 .Navigation-Menu-Links li a:hover::after {
   width: 100%;
 }
 
-/* Styling to hide the responsive view links by default */
 .Navigation-Menu-Links .Responsive-View {
   display: none;
 }
 
-/* Styling for the Close Button */
 .Navigation-Menu-Links i {
   font-size: 35px;
   margin-top: 20px;
 }
 
-/* Styling for the Menu Button */
 .Responsive-Menu-Button i {
   font-size: 35px;
 }
 
-/* Styling for the buttons */
 .Navigation-Menu-Container .btn {
   display: none;
   font-size: 50px;
@@ -212,10 +198,7 @@ nav input {
   top: 15px;
 }
 
-/* Media Queries */
-/* Media Query to style viewports that are 1024px and Below */
 @media screen and (max-width: 1024px) {
-  /* This is to unveil the responsive menu button to open the navigation menu */
   .Navigation-Menu-Container .btn {
     display: block;
   }
@@ -226,7 +209,6 @@ nav input {
     height: 40px;
     width: auto;
   }
-  /* Styling for the Navigational links */
   .Navigation-Menu-Container .Navigation-Menu-Links {
     position: fixed;
     display: block;
@@ -242,33 +224,26 @@ nav input {
     box-shadow: 0px 15px 15px rgba(5, 2, 2, 0.71);
     transition: all 0.7s ease;
   }
-  /* To unveil the navigation menu when the responsive menu button is clicked or checked */
   #Responsive-Menu-Button:checked ~ .Navigation-Menu-Links {
     left: 0%;
   }
-  /* To hide the menu button when the menu is unveiled or open */
   #Responsive-Menu-Button:checked ~ .btn.Responsive-Menu-Button {
     display: none;
   }
-  /* To unveil the close button when the menu is open */
   #Responsive-Close-Button:checked ~ .btn.Responsive-Menu-Button {
     display: block;
   }
-  /* Styling for the navigation menu list items */
   .Navigation-Menu-Links li {
     margin: 50px 5px;
   }
-  /* Styling for the navigational menu links */
   .Navigation-Menu-Links li a {
     display: block;
     padding: 0 20px;
     font-size: 30px;
   }
-  /* This hides the website section title */
   .Navigation-Menu-Links .Website-Section-Title {
     display: none;
   }
-  /* Styling for the responsive view button */
   .Navigation-Menu-Links .Responsive-View {
     display: block;
     color: white;
@@ -276,7 +251,6 @@ nav input {
     padding-left: 20px;
     cursor: pointer;
   }
-  /* On hover effect that changes background color */
   .Navigation-Menu-Links .Responsive-View:hover {
     background-color: #333;
   }
@@ -308,7 +282,6 @@ nav input {
   font-size: 10vw;
 }
 
-/* This styles the anchor tag (which is the start button) within the "ibong-adarna-title" including its positioning, color, size, and  text alignment.*/
 .ibong-adarna-title a {
   position: absolute;
   top: 60%;
@@ -380,7 +353,6 @@ nav input {
     bottom: 30px;
   }
 }
-/* Media Query to style viewports that are 1024px and Below */
 @media (max-width: 1024px) {
   .ibong-adarna-title a {
     font-size: 30px;
@@ -389,7 +361,6 @@ nav input {
     padding: 10px 20px;
   }
 }
-/* Media Query to style viewports that are 768px and Below */
 @media (max-width: 768px) {
   .ibong-adarna-title h1 {
     position: fixed;
@@ -407,7 +378,6 @@ nav input {
     padding: 10px 20px;
   }
 }
-/* Media Query to style viewports that are 480px and Below */
 @media (max-width: 480px) {
   .ibong-adarna-title h1 {
     position: fixed;
@@ -424,20 +394,17 @@ nav input {
     left: 70%;
     padding: 10px 20px;
   }
-  /* This adjusts the scrolling-effect. */
   .scroll-wheel-main-container {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
-  /* This adjusts the scroll-container's size. */
   .scroll-wheel-container {
     width: 20px;
     height: 40px;
     border: 2px solid white;
     border-radius: 10px;
   }
-  /* This adjusts the scroll-wheel's ball size. */
   .scroll-wheel-ball {
     width: 9px;
     border-radius: 5px;
@@ -553,7 +520,6 @@ nav input {
   translate: 15vw 35vh;
 }
 
-/* This is for the scroll animations using scroll-based timelines. */
 @supports (animation-timeline: scroll()) {
   body {
     timeline-scope: --left-side-character-1-information, --left-side-character-2-information, --left-side-character-3-information;
@@ -660,7 +626,6 @@ nav input {
   opacity: 1;
 }
 
-/* Media Query to style viewports that are 480px and Below */
 @media (max-width: 480px) {
   .king-dreaming-contents {
     height: 300px;
@@ -669,7 +634,6 @@ nav input {
     font-size: 1rem;
   }
 }
-/* Ibong Adarna Blur Image Section */
 .ibong-adarna-blur {
   display: flex;
   flex-direction: column;
@@ -704,7 +668,6 @@ nav input {
   text-align: center;
 }
 
-/* Media Query to style viewports that are 768px and Below */
 @media (max-width: 768px) {
   .ibong-adarna-blur {
     height: auto;
@@ -717,7 +680,6 @@ nav input {
     font-size: 1.5rem;
   }
 }
-/* Media Query to style viewports that are 480px and Below */
 @media (max-width: 480px) {
   .ibong-adarna-blur img {
     max-width: 100%;
@@ -753,7 +715,6 @@ nav input {
     flex-direction: row;
   }
 }
-/* This sets the dimensions and positioning of the container. */
 .main-flipping-card-container {
   position: relative;
   width: 300px;
@@ -775,13 +736,11 @@ nav input {
   backface-visibility: hidden;
 }
 
-/* This keeps the front side of the card in its default state. */
 .diego-and-pedro-flipping-card-front-side {
   transform: rotateY(0deg);
   transform-style: preserve-3d;
 }
 
-/* This flips the front card upon hover. */
 .main-flipping-card:hover .diego-and-pedro-flipping-card-front-side {
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
@@ -852,7 +811,6 @@ nav input {
   z-index: 2;
 }
 
-/* This pauses or stops the rotating image carousel on hover. */
 .main-rotating-image-carousel-container:hover {
   animation-play-state: paused;
 }
@@ -979,7 +937,6 @@ nav input {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover effect to slightly enlarge and enhance the shadow on hover */
 .armenia-image-container img:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
@@ -1087,7 +1044,6 @@ select:focus, select:active {
      object-fit: cover;
 }
 
-/* This is the styling for the wrapper for both the sliding image cards that unveil their texts. This includes its flexbox layout, being stacked on top of another, and their gap. */
 .main-sliding-unveil-card-container {
   display: flex;
   flex-direction: column;
@@ -1103,7 +1059,6 @@ select:focus, select:active {
   cursor: pointer;
 }
 
-/* This is to position the second card to the right side of the screen. */
 .sliding-unveil-card-container.right-side-card {
   margin-left: auto;
 }
@@ -1215,7 +1170,6 @@ select:focus, select:active {
   margin: 20px;
 }
 
-/* Media Query to style viewports that are 480px and Below */
 @media (max-width: 480px) {
   .unveiling-image-card-back-view p {
     margin: 10px;
@@ -1348,7 +1302,6 @@ select:focus, select:active {
   border-bottom: 3px solid white;
 }
 
-/* Media Query to style viewports that are 480px and Below */
 @media (max-width: 480px) {
   .main-credits-section-container {
     font-size: 10px;
@@ -1466,4 +1419,26 @@ footer p::after {
 .reveal-content.contentIsVisible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.rainbow-cursor {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  animation: rainbowTrail 1s ease-out forwards;
+}
+
+@keyframes rainbowTrail {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50px, -50px) scale(0.5);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
