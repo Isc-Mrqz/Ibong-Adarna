@@ -238,3 +238,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // This starts to observe each of the element named "reveal-content".
   elements.forEach(element => observer.observe(element));
 });
+
+
+
+
+// Rainbow Cursor Animation
+
+// I created this event listener that would track the mouse movements.
+document.addEventListener("mousemove", (e) => {
+
+   // This creates a new div element for the cursor effect.
+  const rainbowCursor = Object.assign(document.createElement("div"), {
+
+    // This would add the class named "rainbow-cursor" to the new element that would be used for styling.
+    className: "rainbow-cursor",
+
+    // This sets the position of the rainbow cursor according to the mouse cursor position.
+    style: `left: ${e.pageX}px; top: ${e.pageY}px;`,
+  });
+
+  // This appends the newly created rainbowCursor element to the body of my document.
+  document.body.appendChild(rainbowCursor);
+
+  // I set a timeout to remove the rainbow cursor element after 1000 milliseconds or 1 second.
+  setTimeout(() => rainbowCursor.remove(), 1000);
+});
